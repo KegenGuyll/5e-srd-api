@@ -24,7 +24,10 @@ const limiter = rateLimit({
 });
 
 export default async () => {
+  const jsonParser = bodyParser.json()
   const app = express();
+
+  app.use(jsonParser);
 
   // Middleware stuff
   app.set('view engine', 'ejs');

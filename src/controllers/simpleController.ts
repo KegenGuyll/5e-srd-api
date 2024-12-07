@@ -42,6 +42,39 @@ class SimpleController {
       next(err);
     }
   }
+
+  async create(req: Request, res: Response, next: NextFunction) {
+    try {
+      const data = await this.Schema.create(req.body);
+      res.status(201).json(data);
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  async update(req: Request, res: Response, next: NextFunction) {
+    try {
+      const data = await this.Schema.findOneAndUpdate(
+        { index: req.params.index },
+        req.body,
+        { new: true }
+      );
+      if (!data) return next();
+      res.status(200).json(data);
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  async destroy(req: Request, res: Response, next: NextFunction) {
+    try {
+      const data = await this.Schema.findOneAndDelete({ index: req.params.index });
+      if (!data) return next();
+      res.status(204).json(data);
+    } catch (err) {
+      next(err);
+    }
+  }
 }
 
 export default SimpleController;

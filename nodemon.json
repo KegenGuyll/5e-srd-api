@@ -5,7 +5,8 @@
         "dist/*",
         "node_modules/*",
         "collection.postman.json",
-        "tmp/*"
+        "tmp/*",
+        "src/swagger/*"
     ],
     "ext": "js,ts,ejs,json,yml"
 }

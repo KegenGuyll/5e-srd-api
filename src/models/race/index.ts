@@ -9,7 +9,6 @@ const RaceAbilityBonusSchema = new Schema<RaceAbilityBonus>({
 });
 
 const RaceSchema = new Schema<Race>({
-  _id: { type: String, select: false },
   ability_bonus_options: ChoiceSchema,
   ability_bonuses: [RaceAbilityBonusSchema],
   age: { type: String, index: true },

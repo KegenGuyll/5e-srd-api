@@ -13,6 +13,12 @@ export const index = async (req: Request, res: Response, next: NextFunction) =>
   simpleController.index(req, res, next);
 export const show = async (req: Request, res: Response, next: NextFunction) =>
   simpleController.show(req, res, next);
+export const create = async (req: Request, res: Response, next: NextFunction) => 
+  simpleController.create(req, res, next);
+export const update = async (req: Request, res: Response, next: NextFunction) =>
+  simpleController.update(req, res, next);
+export const destroy = async (req: Request, res: Response, next: NextFunction) =>
+  simpleController.destroy(req, res, next);
 
 export const showSubracesForRace = async (req: Request, res: Response, next: NextFunction) => {
   try {
